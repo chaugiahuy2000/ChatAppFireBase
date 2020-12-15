@@ -38,7 +38,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity {
-
+//DM
     private static final int RC_SIGN_IN = 100;
     GoogleSignInClient mGoogleSignInClient ;
 
