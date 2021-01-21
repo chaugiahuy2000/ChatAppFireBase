@@ -57,7 +57,7 @@ public class DashboardActivity extends AppCompatActivity {
                             actionBar.setTitle("Home");
                             HomeFragment fragment1 = new HomeFragment();
                             FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
-                            ft1.replace(R.id.container, fragment1,"");
+                            ft1.replace(R.id.content, fragment1,"");
                             ft1.commit();
                             return true;
                         case R.id.nav_profile:
@@ -77,6 +77,15 @@ public class DashboardActivity extends AppCompatActivity {
                             ft3.replace(R.id.content, fragment3,"");
                             ft3.commit();
                             return true;
+
+                     /*   case R.id.nav_chat:
+                            //xử lý nút users
+                            actionBar.setTitle("Chats");
+                            ChatListFragment fragment4 = new ChatListFragment();
+                            FragmentTransaction ft4 = getSupportFragmentManager().beginTransaction();
+                            ft4.replace(R.id.content, fragment4,"");
+                            ft4.commit();
+                            return true;*/
                     }
 
 
@@ -112,19 +121,5 @@ public class DashboardActivity extends AppCompatActivity {
         super.onStart();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id =item.getItemId();
-        if(id == R.id.action_logout){
-            firebaseAuth.signOut();
-            checkUserStatus();
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }
